@@ -1,0 +1,13 @@
+# you can free to change all these codes/structure
+import math
+def compute_log_loss(A):
+    loss = 0
+    for i in range(0,len(A)):
+        loss+=A[i][0]*math.log(A[i][1],10)+(1-A[i][0])*math.log((1-A[i][1]),10)
+    loss = -1*loss/len(A)
+    
+    return loss
+
+A = [[1, 0.4], [0, 0.5], [0, 0.9], [0, 0.3], [0, 0.6], [1, 0.1], [1, 0.9], [1, 0.8]]
+loss = compute_log_loss(A)
+print(loss)
